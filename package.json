@@ -1,0 +1,22 @@
+{
+  "name": "prueba-apptiempo",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "rm -rf dist && vite build",
+    "preview": "vite preview",
+    "deploy": "gh-pages -d dist"
+  },
+  "devDependencies": {
+    "eslint": "9.22.0",
+    "gh-pages": "^6.3.0",
+    "stylelint": "16.3.1",
+    "stylelint-config-manzdev": "^0.0.18",
+    "vite": "^6.2.0",
+    "vite-tsconfig-paths": "^5.1.4"
+  },
+  "keywords": [],
+  "license": "ISC"
+}

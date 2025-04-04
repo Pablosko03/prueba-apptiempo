@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>App del Tiempo</title>
+  <link rel="stylesheet" href="estilo.css">
+  <script defer src="funcionalidad.js"></script>
+</head>
+
+<body>
+  <div class="tarjeta">
+    <h2>Consulta el Clima</h2>
+    <input type="text" id="ciudad" placeholder="Ingresa una ciudad" oninput="sugerirCiudades()"
+      onkeypress="eventoEnter(event)">
+    <ul id="sugerencias"></ul>
+    <button onclick="obtenerClima()">Buscar</button>
+    <button onclick="limpiarBusqueda()">Limpiar</button>
+    <h3 id="resultado"></h3>
+  </div>
+
+</body>
+
+</html>
