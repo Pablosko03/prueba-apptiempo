@@ -36,16 +36,19 @@ function seleccionarCiudad(nombreCiudad) {
     sugerenciasLista.style.display = "none"; //Oculto las sugerencias al seleccionar una ciudad
 }
 
+// Evento para buscar la ciudad directamente al presionar Enter
 function funcionEnter(event) {
     if (event.key === "Enter") {
         obtenerClima();
     }
 }
 
+// Funcion para obtener el clima de la ciudad ingresada y mostrarlo en el elemento con id "resultado"
 async function obtenerClima() {
     const ciudad = document.getElementById("ciudad").value.trim();
     const apiKey = "b221ee79be96d11caa33bea05c8901f2"; // API Key de OpenWeatherMap
 
+    // Si la ciudad está vacía, mostramos un mensaje de error
     if (!ciudad) {
         document.getElementById("resultado").innerHTML = "Por favor, ingresa una ciudad.";
         return;
