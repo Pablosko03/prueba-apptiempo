@@ -2,24 +2,83 @@
 <html lang="es">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>App del Tiempo</title>
-  <link rel="stylesheet" href="estilo.css">
+  <link rel="stylesheet" href="estilo.css" />
   <script defer src="funcionalidad.js"></script>
 </head>
 
 <body>
-  <div class="tarjeta">
-    <h2>Consulta el Clima</h2>
-    <input type="text" id="ciudad" placeholder="Ingresa una ciudad" oninput="sugerirCiudades()"
-      onkeypress="funcionEnter(event)">
-    <ul id="sugerencias"></ul>
-    <button onclick="obtenerClima()">Buscar</button>
-    <button onclick="limpiarBusqueda()">Limpiar</button>
-    <h3 id="resultado"></h3>
+  <!-- MENÚ LATERAL -->
+  <div class="sidebar" id="menuLateral">
+    <ul>
+      <li><a href="#">Inicio</a></li>
+      <li><a href="#">Pronóstico</a></li>
+      <li><a href="#">Favoritos</a></li>
+      <li><a href="#">Configuración</a></li>
+    </ul>
   </div>
 
+  <!-- HEADER -->
+  <header class="header">
+    <div class="header-content">
+      <div class="menu-toggle" onclick="document.getElementById('menuLateral').classList.toggle('active')">
+        ☰ Menú
+      </div>
+      <div class="auth-buttons">
+        <button>Iniciar Sesión</button>
+        <button>Registrarse</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- CONTENIDO PRINCIPAL -->
+  <main class="contenido">
+    <!-- BUSCADOR -->
+    <section class="buscador">
+      <input type="text" id="ciudad" placeholder="Ingresa una ciudad" oninput="sugerirCiudades()"
+        onkeypress="funcionEnter(event)" />
+      <button onclick="obtenerClima()">Buscar</button>
+      <button onclick="limpiarBusqueda()">Limpiar</button>
+    </section>
+
+    <ul id="sugerencias"></ul>
+
+    <!-- DATOS DEL CLIMA -->
+    <section class="datos-clima">
+      <div class="hoy">
+        <h3>Clima Hoy</h3>
+        <div class="icono">
+          <!-- ícono del clima aquí -->
+        </div>
+        <div class="detalles">
+          <span>🌡 22°C</span>
+          <span>💧 60%</span>
+        </div>
+        <p id="resultado">Introduce una ciudad para ver el clima.</p>
+      </div>
+
+      <div class="mapa">
+        <h3>Ubicación</h3>
+        <div class="contenedor-mapa">
+          <!-- Aquí puedes insertar un iframe de Google Maps si lo deseas -->
+        </div>
+      </div>
+    </section>
+
+    <!-- PRONÓSTICO DE 5 DÍAS -->
+    <section class="proximos-dias">
+      <h3>Próximos 5 Días</h3>
+      <div class="dias">
+        <button>Lun</button>
+        <button>Mar</button>
+        <button>Mié</button>
+        <button>Jue</button>
+        <button>Vie</button>
+      </div>
+    </section>
+  </main>
 </body>
 
 </html>
