@@ -1,24 +1,94 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
 body {
-  font-family: Arial, sans-serif;
-  text-align: center;
-  padding: 20px;
+  background: linear-gradient(to top right, #56ccf2, #2f80ed);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
 }
 
 .tarjeta {
+  background: rgb(255 255 255 / 15%);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 2rem;
+  width: 100%;
   max-width: 400px;
-  margin: auto;
-  padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 12px 24px rgb(0 0 0 / 20%);
+  color: #fff;
 }
 
-input {
-  width: 80%;
-  padding: 10px;
-  margin: 10px 0;
+.tarjeta h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 0.8rem;
+  border: none;
+  border-radius: 12px;
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+}
+
+#sugerencias {
+  list-style: none;
+  text-align: left;
+  max-height: 120px;
+  overflow-y: auto;
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+  border-radius: 10px;
+  background: rgb(255 255 255 / 20%);
+  display: none;
+}
+
+#sugerencias li {
+  padding: 0.4rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#sugerencias li:hover {
+  background: rgb(255 255 255 / 30%);
 }
 
 button {
-  padding: 10px 20px;
+  background-color: #ffcc70;
+  color: #333;
+  border: none;
+  border-radius: 12px;
+  padding: 0.7rem 1.2rem;
+  margin: 0.5rem 0.3rem;
+  font-weight: bold;
+  font-size: 1rem;
   cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background-color: #f5b041;
+}
+
+#resultado {
+  margin-top: 1.5rem;
+  font-size: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+#resultado img {
+  width: 80px;
+  height: 80px;
 }

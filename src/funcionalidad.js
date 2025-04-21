@@ -12,6 +12,10 @@ async function sugerirCiudades() {
         const respuesta = await fetch(url);
         const datos = await respuesta.json();
 
+        if (datos.length > 0) {
+            sugerenciasLista.style.display = "block"; // Mostrar sugerencias si hay resultados
+        }
+
         datos.forEach(lugar => {
             const item = document.createElement("li");
             item.textContent = `${lugar.name}, ${lugar.country}`;
@@ -29,6 +33,7 @@ async function sugerirCiudades() {
 function seleccionarCiudad(nombreCiudad) {
     document.getElementById("ciudad").value = nombreCiudad;
     document.getElementById("sugerencias").innerHTML = "";
+    sugerenciasLista.style.display = "none"; //Oculto las sugerencias al seleccionar una ciudad
 }
 
 function funcionEnter(event) {
