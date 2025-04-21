@@ -31,6 +31,7 @@ async function sugerirCiudades() {
 }
 
 function seleccionarCiudad(nombreCiudad) {
+    const sugerenciasLista = document.getElementById("sugerencias");
     document.getElementById("ciudad").value = nombreCiudad;
     document.getElementById("sugerencias").innerHTML = "";
     sugerenciasLista.style.display = "none"; //Oculto las sugerencias al seleccionar una ciudad
